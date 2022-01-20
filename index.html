@@ -12,27 +12,37 @@
 </head>
 <body>
     <article id="container">
-        <section class="box">
+        <section id="box">
             <header>
                 <h1>Muzic</h1>
             </header>
             <main>
+                <section id="main">
                 <h2 id="album">album name</h2>
                 <figure>
                     <img src="./images/music.png" alt="album" id="albumpic">
                 </figure>
                 <section id="track">
+                    <span id="start">00:00</span>
                     <input type="range" name="musicrange" id="range">
+                    <span id="end">00:00</span>
                 </section>
                 <section id="controll">
-                    <img src="./images/left.png" alt="prev" class="btn" id="prev">
-                    <img src="./images/play.png" alt="playpause" class="btn" id="playpause">
-                    <img src="./images/pause.png" alt="next" class="btn" id="next">
+                    <img src="./images/left.png" alt="prev" class="btn" id="prev" title="previous">
+                    <img src="./images/play.png" alt="playpause" class="btn" id="playpause" title="play">
+                    <img src="./images/right.png" alt="next" class="btn" id="next" title="next">
                 </section>
+            </section>
+            <section id="side">
+                <figure>
+                    <img src="./images/profile.png" alt="profile">
+                </figure>
+                <h3 id="user">Name</h3>
+                <h3 id="count">Track Count</h3>
+                <h3 id="sign">sign in</h3>
+            </section>
+            <footer></footer>
             </main>
-            <footer>
-                <p>copyright &#169 All rights reserved</p>
-            </footer>
         </section>
     </article>
     <script src="./scripts/main.js"></script>
