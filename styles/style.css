@@ -33,14 +33,17 @@
     border-bottom-right-radius: 2rem;
     border: 1px solid white;
     border-left: none;
-    padding: 0.3rem 1rem;
+    padding: 0.3rem 0rem;
     text-align: start;
     margin-bottom: 0.8rem;
     background-color: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-#side{
-    display: none;
+#userdata{
+    font: normal bold 1rem 'poppins';
 }
 
 #album{
@@ -54,7 +57,6 @@
 
 #track{
     margin: 2.4rem 0rem 0rem 0rem;
-    /* border: 1px solid white; */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -81,4 +83,29 @@ footer{
     height: 30px;
     background-color: rgba(0,0,0,0.3);
     border-top-left-radius: 3rem;
+}
+
+#side{
+    z-index: 10;
+    padding: 2rem 0rem;
+   position: absolute;
+   top: 0rem;
+   bottom: 0rem;
+   left: 0rem;
+   width: 100%;
+   border: 1px solid white;   
+   border-radius: 0.3rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    transition: 0.5s linear;
+}
+
+#backbtn{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font: normal bold 1rem 'poppins';
 }
