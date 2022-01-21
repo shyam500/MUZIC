@@ -1,111 +1,113 @@
-*{
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-    color: white;
-    font-family: 'poppins','Courier New', Courier, monospace;
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  color: white;
+  font-family: "poppins", "Courier New", Courier, monospace;
+  user-select: none;
 }
 
-#container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to right bottom,#0d324d,#7f5a83);
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right bottom, #0d324d, #7f5a83);
 }
 
-#box{
-    width: 300px;
-    height: 450px;
-    background: linear-gradient(to right bottom,#380036,#0cbaba);
-    border-radius: 0.3rem;
-    overflow: hidden;
-    box-shadow: 1px 1px 1px rgb(26, 25, 25),8px 8px 10px rgb(26, 25, 25);
+#box {
+  width: 300px;
+  height: 450px;
+  background: linear-gradient(to right bottom, #380036, #0cbaba);
+  border-radius: 0.3rem;
+  overflow: hidden;
+  box-shadow: 1px 1px 1px rgb(26, 25, 25), 8px 8px 10px rgb(26, 25, 25);
 }
 
-#box{
-    position: relative;
-    text-align: center;
+#box {
+  position: relative;
+  text-align: center;
 }
 
-#box header{
-    width: 90%;
-    border-bottom-right-radius: 2rem;
-    border: 1px solid white;
-    border-left: none;
-    padding: 0.3rem 0rem;
-    text-align: start;
-    margin-bottom: 0.8rem;
-    background-color: rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+#box header {
+  width: 90%;
+  border-bottom-right-radius: 2rem;
+  border: 1px solid white;
+  border-left: none;
+  padding: 0.3rem 0rem;
+  text-align: start;
+  margin-bottom: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-#userdata{
-    font: normal bold 1rem 'poppins';
+#userdata {
+  font: normal bold 1rem "poppins";
 }
 
-#album{
-    padding: 1rem 0rem;
+#album {
+  padding: 1rem 0rem;
 }
 
-#albumpic{
-    height: 80px;
-    margin: 0.5rem 0rem;
+#albumpic {
+  height: 80px;
+  margin: 0.5rem 0rem;
 }
 
-#track{
-    margin: 2.4rem 0rem 0rem 0rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+#track {
+  margin: 2.4rem 0rem 0rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-#controll{
-    border: 1px solid rgb(44, 44, 44);
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0.4rem;
-    margin: 3rem auto 0rem auto;
-    width: 94%;
-    border-radius: 5rem;
-    box-shadow: 1px 1px 1px rgb(26, 25, 25),1px 1px 5px rgb(26, 25, 25);
+#controll {
+  border: 1px solid rgb(44, 44, 44);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.4rem;
+  margin: 3rem auto 0rem auto;
+  width: 94%;
+  border-radius: 5rem;
+  box-shadow: 1px 1px 1px rgb(26, 25, 25), 1px 1px 5px rgb(26, 25, 25);
 }
 
-footer{
-    position: absolute;
-    bottom: 0rem;
-    right: 0rem;
-    border: 1px solid white;
-    border-right: none;
-    width: 90%;
-    height: 30px;
-    background-color: rgba(0,0,0,0.3);
-    border-top-left-radius: 3rem;
+footer {
+  position: absolute;
+  bottom: 0rem;
+  right: 0rem;
+  border: 1px solid white;
+  border-right: none;
+  width: 90%;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-top-left-radius: 3rem;
 }
 
-#side{
-    z-index: 10;
-    padding: 2rem 0rem;
-   position: absolute;
-   top: 0rem;
-   bottom: 0rem;
-   left: 0rem;
-   width: 100%;
-   border: 1px solid white;   
-   border-radius: 0.3rem;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.9);
-    transition: 0.5s linear;
+#side {
+  z-index: 10;
+  padding: 2rem 0rem;
+  position: absolute;
+  top: 0rem;
+  bottom: 0rem;
+  left: 0rem;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  transition: 0.5s linear;
+  display: none;
 }
 
-#backbtn{
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font: normal bold 1rem 'poppins';
+#backbtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font: normal bold 1rem "poppins";
 }
