@@ -1,25 +1,34 @@
 import * as vars from "./var.js";
+import paths from './path.js';
 
-const all = vars.default;
+const ALL = vars.default;
+const CURRENT_SONG = paths[0];
 
-const song = new Audio("../audios/bensound-dubstep.mp3");
-
-all.playpause.addEventListener("click", () => playsongFunc(song));
+const SONG = new Audio(CURRENT_SONG.path);
+ALL.playpause.addEventListener("click", () => playsongFunc(SONG));
 
 let playing = false;
 function playsongFunc(song) {
   if (!playing) {
     song.play();
-    all.playpause.src = "../images/pause.png";
+    ALL.playpause.src = "../images/pause.png";
     playing = true;
   } else {
-    all.playpause.src = "../images/play.png";
+    ALL.playpause.src = "../images/play.png";
     playing = false;
     song.pause();
   }
-}
+};
 
-// if(playing)timeFunc(all);
+displayAlbumFunc(ALL,CURRENT_SONG);
+
+function displayAlbumFunc({albumName},song){
+  albumName.textContent = song.name;
+};
+
+
+
+// if(playing)timeFunc(ALL);
 
 // function timeFunc({ start, end }) {
 //   const duration = song.duration;

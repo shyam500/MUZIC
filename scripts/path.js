@@ -22,4 +22,6 @@ const paths = [
         name:'this-minimal-technology.mp3',
         path:'../audios/this-minimal-technology.mp3'
     }
-]
+];
+
+export default paths;
