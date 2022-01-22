@@ -11,18 +11,24 @@ function playsongFunc(song) {
   if (!playing) {
     song.play();
     all.playpause.src = "../images/pause.png";
-    timeFunc(all,song);
     playing = true;
   } else {
     all.playpause.src = "../images/play.png";
     playing = false;
     song.pause();
-  } 
+  }
 }
 
-function timeFunc({ start, end },song) {
-    const duration = song.duration;
-    end.textContent = ` ${Math.trunc(duration/60)}:${(Math.floor(duration%60))}min`;
-  console.log(start);
-  console.log(end);
-}
+// if(playing)timeFunc(all);
+
+// function timeFunc({ start, end }) {
+//   const duration = song.duration;
+//   let current = song.currentTime;
+//   setInterval(() => {
+//     console.log(current);
+//     console.log(duration);
+//     end.textContent = ` ${Math.trunc(duration / 60)}:${Math.floor(
+//       duration % 60
+//     )}min`;
+//   },1000); 
+// };
