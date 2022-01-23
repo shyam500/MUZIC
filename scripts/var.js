@@ -6,9 +6,11 @@ const range = document.querySelector("#range"),
   playpause = document.querySelector("#playpause"),
   userdata = document.querySelector("#userdata"),
   back = document.querySelector("#backbtn"),
-  albumName=document.querySelector('#album');
+  albumName=document.querySelector('#album'),
+  audio = document.querySelector('#audioplayer');
 
 export default {
+  audio,
   albumName,
   range,
   start,

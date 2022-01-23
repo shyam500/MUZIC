@@ -1,43 +1,47 @@
 import * as vars from "./var.js";
-import paths from './path.js';
+import paths from "./path.js";
 
-const ALL = vars.default;
-const CURRENT_SONG = paths[0];
-
-const SONG = new Audio(CURRENT_SONG.path);
-ALL.playpause.addEventListener("click", () => playsongFunc(SONG));
-
+let count = 0;
 let playing = false;
-function playsongFunc(song) {
-  if (!playing) {
-    song.play();
-    ALL.playpause.src = "../images/pause.png";
-    playing = true;
-  } else {
-    ALL.playpause.src = "../images/play.png";
-    playing = false;
-    song.pause();
-  }
-};
+const ALL = vars.default;
 
-displayAlbumFunc(ALL,CURRENT_SONG);
+//play or pause current song
+ALL.playpause.addEventListener("click", () =>
+  playing ? pauseSongFunc(ALL) : playSongFunc(ALL)
+);
 
-function displayAlbumFunc({albumName},song){
-  albumName.textContent = song.name;
-};
+// play next
+ALL.next.addEventListener("click", () => {
+  playNextFunc(ALL);
+});
 
+// play prev
+ALL.prev.addEventListener("click", () => {
+  playPrevFunc(SONG);
+});
 
+function playSongFunc({ audio,playpause }) {
+  audio.play()
+  playpause.src = "../images/pause.png";
+  playing = true;
+}
 
-// if(playing)timeFunc(ALL);
+function pauseSongFunc({ audio, playpause }) {
+  audio.pause();
+  playpause.src = "../images/play.png";
+  playing = false;
+}
 
-// function timeFunc({ start, end }) {
-//   const duration = song.duration;
-//   let current = song.currentTime;
-//   setInterval(() => {
-//     console.log(current);
-//     console.log(duration);
-//     end.textContent = ` ${Math.trunc(duration / 60)}:${Math.floor(
-//       duration % 60
-//     )}min`;
-//   },1000); 
-// };
+// function playPrevFunc(song) {
+//   song.pause();
+//   playing = false;
+//   count === 0 ? (count = paths.length - 1) : (count -= 1);
+//   console.log(count);
+// }
+
+// function playNextFunc(song) {
+//   song.pause();
+//   playing = false;
+//   count === paths.length - 1 ? (count = 0) : (count += 1);
+//   console.log(count);
+// }

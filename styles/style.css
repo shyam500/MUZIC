@@ -113,3 +113,6 @@ footer {
   font: normal bold 1rem "poppins";
 }
 
+#audioplayer{
+  position: absolute;
+}
