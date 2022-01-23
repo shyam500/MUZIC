@@ -17,7 +17,7 @@ ALL.playpause.addEventListener("click", () =>
 
 // play next
 ALL.next.addEventListener("click", () => {
-  playNextFunc(ALL);
+  playNextFunc();
 });
 
 // play prev
@@ -39,17 +39,13 @@ function pauseSongFunc({ audio, playpause }) {
 
 function playPrevFunc() {
   count === 0 ? (count = paths.length - 1) : (count -= 1);
-  // loadSongFunc(count);
-  // audio.src = paths[count].path;
-  // playSongFunc(ALL);
   changeSongFunc(count,ALL);
 };
 
-function playNextFunc({audio}) {
+function playNextFunc() {
   count === paths.length - 1 ? (count = 0) : (count += 1);
-  loadSongFunc
+  changeSongFunc(count,ALL);
 };
-
 
 function changeSongFunc(count,{audio}){
   loadSongFunc(count);
