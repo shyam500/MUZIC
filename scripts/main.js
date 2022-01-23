@@ -38,17 +38,13 @@ function pauseSongFunc({ audio, playpause }) {
 };
 
 function playPrevFunc({audio}) {
-  audio.pause();
-  playing = false;
   count === 0 ? (count = paths.length - 1) : (count -= 1);
   loadSongFunc(count);
   audio.src = paths[count].path;
   playSongFunc(ALL);
 };
 
-// function playNextFunc(song) {
-//   song.pause();
-//   playing = false;
-//   count === paths.length - 1 ? (count = 0) : (count += 1);
-//   console.log(count);
-// }
+function playNextFunc({audio}) {
+  count === paths.length - 1 ? (count = 0) : (count += 1);
+  
+};
