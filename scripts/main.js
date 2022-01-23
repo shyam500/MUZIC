@@ -22,7 +22,7 @@ ALL.next.addEventListener("click", () => {
 
 // play prev
 ALL.prev.addEventListener("click", () => {
-  playPrevFunc(ALL);
+  playPrevFunc();
 });
 
 function playSongFunc({ audio,playpause }) {
@@ -37,14 +37,22 @@ function pauseSongFunc({ audio, playpause }) {
   playing = false;
 };
 
-function playPrevFunc({audio}) {
+function playPrevFunc() {
   count === 0 ? (count = paths.length - 1) : (count -= 1);
-  loadSongFunc(count);
-  audio.src = paths[count].path;
-  playSongFunc(ALL);
+  // loadSongFunc(count);
+  // audio.src = paths[count].path;
+  // playSongFunc(ALL);
+  changeSongFunc(count,ALL);
 };
 
 function playNextFunc({audio}) {
   count === paths.length - 1 ? (count = 0) : (count += 1);
-  
+  loadSongFunc
+};
+
+
+function changeSongFunc(count,{audio}){
+  loadSongFunc(count);
+  audio.src = paths[count].path;
+  playSongFunc(ALL);
 };
