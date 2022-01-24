@@ -26,9 +26,30 @@ ALL.prev.addEventListener("click", () => {
 });
 
 // auto play next song
-ALL.audio.addEventListener('ended',()=>{
+ALL.audio.addEventListener("ended", () => {
   playNextSongFunc();
 });
+
+// display currenttime and duration
+ALL.audio.addEventListener("timeupdate", (e) => {
+  ALL.start.textContent = timeGenFunc(e.target.currentTime,'/');
+  ALL.end.textContent = timeGenFunc(e.target.duration,'%');
+});
+
+ALL.range.addEventListener('click',e=>{
+})
+
+function timeGenFunc(time, op) {
+  if (op === "/") {
+    let cMin = Math.floor(time / 60);
+    let cSec = Math.floor(time % 60);
+    return `${cMin < 10 ? "0" + cMin : cMin}:${cSec < 10 ? "0" + cSec : cSec}`;
+  } else if (op === "%") {
+    let dMin = Math.floor(time / 60);
+    let dSec = Math.floor(time % 60);
+    return `${dMin < 10 ? "0" + dMin : dMin}:${dSec < 10 ? "0" + dSec : dSec}`;
+  }
+};
 
 function playSongFunc({ audio, playpause }) {
   audio.play();
