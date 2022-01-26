@@ -33,11 +33,17 @@ ALL.audio.addEventListener("ended", () => {
 
 // display currenttime and duration
 ALL.audio.addEventListener("timeupdate", (e) => {
+  if(e.target.duration > 0){
   ALL.start.textContent = timeGenFunc(e.target.currentTime, "/");
   ALL.end.textContent = timeGenFunc(e.target.duration, "%");
   rangeValueChangeFunc(e.target.currentTime, e.target.duration);
+  }else{
+    //avoiding duration to show NaN when changing song
+    ALL.end.textContent = '00:00';
+  }
 });
 
+// changing song current time using range
 ALL.range.addEventListener("click", (e) => {
   ALL.audio.currentTime = (ALL.audio.duration / 100) * e.target.value;
 });
